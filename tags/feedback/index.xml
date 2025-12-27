@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Feedback on Swapnil Ogale Portfolio</title>
-    <link>https://swapnilogale.github.io/tags/feedback/</link>
-    <description>Recent content in Feedback on Swapnil Ogale Portfolio</description>
+    <title>Feedback on Jordan Heasman Portfolio</title>
+    <link>https://jordanheasman.github.io/tags/feedback/</link>
+    <description>Recent content in Feedback on Jordan Heasman Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://swapnilogale.github.io/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jordanheasman.github.io/tags/feedback/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Art of the Review</title>
-      <link>https://swapnilogale.github.io/publications/reviewpost/</link>
+      <link>https://jordanheasman.github.io/publications/reviewpost/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://swapnilogale.github.io/publications/reviewpost/</guid>
+      <guid>https://jordanheasman.github.io/publications/reviewpost/</guid>
       <description>&lt;p&gt;I was invited by &lt;a href=&#34;https://www.knowledgeowl.com/&#34;&gt;KnowledgeOwl&lt;/a&gt; to write a guest post for their blog.&lt;/p&gt;&#xA;&lt;p&gt;I wrote about why proper reviews are vital to the documentation process, how to plan for them, various kinds of reviews, and how to provide to feedback (if you are the one reviewing someone else&amp;rsquo;s docs!).&lt;/p&gt;</description>
     </item>
   </channel>
