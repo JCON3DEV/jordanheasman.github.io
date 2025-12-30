@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jordan Heasman Portfolio</title>
-    <link>https://jordanheasman.github.io/tags/</link>
+    <link>https://jcon3dev.github.io/tags/</link>
     <description>Recent content in Tags on Jordan Heasman Portfolio</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jordanheasman.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jcon3dev.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Governance</title>
-      <link>https://jordanheasman.github.io/tags/governance/</link>
+      <link>https://jcon3dev.github.io/tags/governance/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/governance/</guid>
+      <guid>https://jcon3dev.github.io/tags/governance/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Models</title>
-      <link>https://jordanheasman.github.io/tags/data-models/</link>
+      <link>https://jcon3dev.github.io/tags/data-models/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/data-models/</guid>
+      <guid>https://jcon3dev.github.io/tags/data-models/</guid>
       <description></description>
     </item>
     <item>
       <title>APIs</title>
-      <link>https://jordanheasman.github.io/tags/apis/</link>
+      <link>https://jcon3dev.github.io/tags/apis/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/apis/</guid>
+      <guid>https://jcon3dev.github.io/tags/apis/</guid>
       <description></description>
     </item>
     <item>
       <title>Documentation Systems</title>
-      <link>https://jordanheasman.github.io/tags/documentation-systems/</link>
+      <link>https://jcon3dev.github.io/tags/documentation-systems/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/documentation-systems/</guid>
+      <guid>https://jcon3dev.github.io/tags/documentation-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Platform Architecture</title>
-      <link>https://jordanheasman.github.io/tags/platform-architecture/</link>
+      <link>https://jcon3dev.github.io/tags/platform-architecture/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/platform-architecture/</guid>
+      <guid>https://jcon3dev.github.io/tags/platform-architecture/</guid>
       <description></description>
     </item>
     <item>
       <title>AI Enforcement</title>
-      <link>https://jordanheasman.github.io/tags/ai-enforcement/</link>
+      <link>https://jcon3dev.github.io/tags/ai-enforcement/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jordanheasman.github.io/tags/ai-enforcement/</guid>
+      <guid>https://jcon3dev.github.io/tags/ai-enforcement/</guid>
       <description></description>
     </item>
   </channel>
