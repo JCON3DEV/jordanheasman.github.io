@@ -43,9 +43,9 @@ div.skills-heading{
 }
 
 .tag {
-  background: #eee;
+  background: #E5E7EB;
   border-radius: 3px 0 0 3px;
-  color: #999;
+  color: #6B7280;
   display: inline-block;
   height: 26px;
   line-height: 26px;
@@ -71,7 +71,7 @@ div.skills-heading{
 .tag::after {
   background: #fff;
   border-bottom: 13px solid transparent;
-  border-left: 10px solid #eee;
+  border-left: 10px solid #E5E7EB;
   border-top: 13px solid transparent;
   content: '';
   position: absolute;
@@ -80,12 +80,12 @@ div.skills-heading{
 }
 
 .tag:hover {
-  background-color: crimson;
+  background-color: #9F3E22;
   color: white;
 }
 
 .tag:hover::after {
-   border-left-color: crimson;
+   border-left-color: #9F3E22;
 }
 
 .project-fact{
@@ -97,6 +97,6 @@ div.skills-heading{
 
 
 .resume-section blockquote {
-    border-left: 4px solid #BD5D38;
+    border-left: 4px solid #B4532A;
     padding-left: 1em;
 }
