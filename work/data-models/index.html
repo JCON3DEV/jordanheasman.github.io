@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Data Models</title>
-  <meta property="og:title" content="Data Models" />
+  <title>Contract-Driven Standards Enforcement at Scale</title>
+  <meta property="og:title" content="Contract-Driven Standards Enforcement at Scale" />
   <meta property="og:image" content="/img/avatar-placeholder.svg" />
-  <meta name="description" content="Platform data model documentation system case study.">
-  <meta property="og:description" content="Platform data model documentation system case study." />
+  <meta name="description" content="Contract-driven editorial standards enforcement system for user-centric platform documentation at scale.">
+  <meta property="og:description" content="Contract-driven editorial standards enforcement system for user-centric platform documentation at scale." />
   <meta name="author" content="Jordan Heasman">
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
   <a class="navbar-brand js-scroll-trigger" href="#page-top">
     <span class="d-block d-lg-none">Jordan Heasman</span>
     <span class="d-none d-lg-block">
-      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/avatar-placeholder.svg" alt="">
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/avatar-placeholder.svg" alt="Jordan Heasman">
     </span>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,31 +65,128 @@
       <a href="/work/">Work</a>
     </li>
     <li class="breadcrumb-item active">
-      <span>Data Models</span>
+      <span>Contract-Driven Standards Enforcement at Scale</span>
     </li>
   </ol>
 </nav>
 
 <section class="resume-section p-3 p-lg-5 d-flex d-column">
   <div class="my-auto">
-    <h1 class="mb-0"><span class="text-primary">Data Models</span></h1>
-    <p>Placeholder — Platform data model documentation system for a complex enterprise integration platform.</p>
+    <h1 class="mb-0"><span class="text-primary">Contract-Driven Standards Enforcement at Scale</span></h1>
+    <p>Contract-driven editorial standards enforcement system for user-centric platform documentation at scale.</p>
     
-    <h3 id="problem">Problem</h3>
-    <p>Placeholder — Existing documentation did not reflect actual system behavior, causing integration failures. Schema documentation was scattered across multiple sources with no single source of truth.</p>
-    <p>Placeholder — Partners building integrations encountered undocumented edge cases and schema constraints, leading to failed implementations and extended support cycles.</p>
+    <h3 id="problem">Business Problem</h3>
+    <p>Adobe Experience Platform documentation is authored and maintained by a distributed set of contributors, across a large and aging content corpus. While a comprehensive authoring guide existed, the organization introduced a <strong>deliberate shift from product-focused documentation to a user-centric writing model</strong>—prioritizing user goals, workflows, and context over feature description.</p>
+    <p>At scale, this shift exposed a systemic problem:</p>
+    <ul>
+      <li>Style and tone rules were <strong>applied inconsistently</strong> across documents</li>
+      <li>UI control notation and DNL references drifted, creating downstream localization risk</li>
+      <li>Structure and user-centric framing varied widely depending on author experience and reviewer availability</li>
+    </ul>
+    <p>These issues were not isolated defects. They compounded over time, increasing review effort and making it difficult to reason about the <strong>overall quality posture</strong> of the documentation set.</p>
+    <p>The impact was felt most acutely by:</p>
+    <ul>
+      <li><strong>Writers</strong>, whose workload increased as style corrections required revisiting entire sections rather than isolated sentences</li>
+      <li><strong>Customers</strong>, who came to documentation with a clear problem to solve, but were forced to parse product-centric descriptions instead of goal-oriented guidance</li>
+    </ul>
+    <p>This was not a matter of individual writing skill. It was a <strong>standards enforcement problem under scale</strong>.</p>
     
-    <h3 id="constraints">Constraints</h3>
-    <p>Placeholder — Multiple upstream teams owned different schema components with no unified governance model. Documentation updates required coordination across teams with different release cycles.</p>
-    <p>Placeholder — Legacy systems contained schema definitions that could not be easily extracted or validated against documentation.</p>
+    <h3 id="constraints">Assumptions</h3>
+    <p>Several assumptions shaped the approach from the outset:</p>
+    <ul>
+      <li>Editorial standards express <strong>organizational intent</strong>, not personal preference</li>
+      <li>Human editorial review does not scale linearly with content growth</li>
+      <li>Automated systems should <strong>identify quality risk</strong>, not rewrite content</li>
+      <li>Enforcement mechanisms must respect contributor autonomy and publishing velocity</li>
+    </ul>
+    <p>These assumptions were reinforced by hard constraints:</p>
+    <ul>
+      <li>No automated rewrites of documentation</li>
+      <li>No blocking CI gates on pull requests</li>
+      <li>No exhaustive "fix everything" lint output</li>
+      <li>No increase in reviewer load</li>
+      <li>No retraining teams or reauthoring the existing style guide</li>
+    </ul>
+    <p>Organizationally:</p>
+    <ul>
+      <li>The style guide existed but was <strong>not consistently enforced</strong></li>
+      <li>Review authority was informal and varied by reviewer availability</li>
+      <li>Contributors ranged widely in experience, from senior writers to new team members</li>
+    </ul>
+    <p>Any solution that attempted to centralize authority, mandate behavior change, or require full editorial review of every contribution would fail to scale and would not be adopted.</p>
     
-    <h3 id="decisions">Decisions</h3>
-    <p>Placeholder — Introduced versioned content architecture with machine-readable metadata for downstream validation. Created automated pipeline to extract schema definitions and generate documentation artifacts.</p>
-    <p>Placeholder — Established cross-team governance model with clear ownership boundaries for each schema domain.</p>
+    <h3 id="decisions">Decision</h3>
+    <p>The system was designed to support a single editorial governance decision:</p>
     
-    <h3 id="impact">Impact</h3>
-    <p>Placeholder — Reduced support escalations related to data model misunderstandings across partner integrations. Time to successful integration decreased significantly after documentation improvements.</p>
-    <p>Placeholder — Schema drift between documentation and production systems now detected automatically through validation pipelines.</p>
+    <blockquote>Does this content meet the new user-centric quality bar, or does it require targeted human review—without increasing the manual review burden on an already overstretched team?</blockquote>
+    
+    <p>Before this, that decision was effectively unavailable.</p>
+    <p>It was impractical to determine, with confidence, whether every pull request across the documentation set adhered to the updated user-centric standards. Achieving certainty would have required an editor to read every line of every contribution, slowing publishing velocity and exceeding available capacity.</p>
+    <p>In practice:</p>
+    <ul>
+      <li>Reviewers relied on manual inspection</li>
+      <li>Feedback varied by reviewer attention, time, and individual interpretation</li>
+      <li>Standards enforcement became taste-based rather than systematic</li>
+    </ul>
+    <p>The risk of continuing this way was clear:</p>
+    <ul>
+      <li>Gradual standards drift across the corpus</li>
+      <li>Inconsistent user experience for customers</li>
+      <li>Increased cognitive load on reviewers</li>
+      <li>Erosion of trust in documentation as a reliable problem-solving resource</li>
+    </ul>
+    <p>The goal was not to perfect prose automatically. The goal was to <strong>identify quality risk early</strong>, so editorial attention could be applied precisely where it mattered most.</p>
+    
+    <h4>Intervention</h4>
+    <p>The intervention was a <strong>contract-driven review system</strong> designed to evaluate documentation against an explicit set of editorial standards and surface <strong>quality-risk signals only</strong>. It does not rewrite content, block publishing, or attempt to enforce stylistic changes automatically.</p>
+    <p>The system operates against a <strong>condensed editorial contract</strong> derived from the Adobe Authoring Guide. This contract encodes a focused subset of rules covering tone and voice, structural consistency, UI references, terminology, alerts, and user-centric framing. The contract represents the Editor-in-Chief's intent in a form that can be evaluated consistently at scale.</p>
+    <p>Each documentation change is assessed as follows:</p>
+    <ul>
+      <li>Content is evaluated against the editorial contract</li>
+      <li>Signals are generated only when a rule is violated with high confidence</li>
+      <li>Signals indicate <strong>review risk</strong>, not prescriptive fixes</li>
+      <li>When no violations are detected, the system remains silent</li>
+    </ul>
+    <p>This approach avoids exhaustive feedback and prevents reviewers from being overwhelmed by low-value findings. Silence is treated as a meaningful outcome, indicating that content does not require additional editorial attention.</p>
+    <p>The system explicitly avoids:</p>
+    <ul>
+      <li>Automated rewrites or stylistic corrections</li>
+      <li>Blocking pull requests or enforcing gates</li>
+      <li>Producing exhaustive rule-by-rule feedback</li>
+      <li>Replacing human editorial judgment</li>
+    </ul>
+    <p>Human reviewers remain responsible for final decisions. The system's role is to <strong>reduce the review surface area</strong>, allowing editorial effort to be focused on content that is most likely to fall short of the user-centric quality bar.</p>
+    
+    <p><strong>System flow (single diagram)</strong></p>
+    <pre><code>    Documentation change
+              ↓
+    Editorial standards contract
+              ↓
+    Deterministic evaluation
+              ↓
+    High-confidence risk signals
+              ↓
+    Targeted human review</code></pre>
+    
+    <p>By separating <strong>standards evaluation</strong> from <strong>standards enforcement</strong>, the intervention supports consistent editorial governance at scale without slowing delivery or increasing review burden.</p>
+    
+    <h3 id="impact">Results</h3>
+    <p>The primary outcome of this work was not stylistic uniformity in isolation, but the introduction of a <strong>scalable editorial governance capability</strong> for platform documentation.</p>
+    <p>The system enabled documentation leadership and reviewers to:</p>
+    <ul>
+      <li><strong>Identify quality risk early</strong>, without requiring exhaustive manual review of every contribution</li>
+      <li>Apply editorial attention selectively, focusing on content most likely to diverge from user-centric standards</li>
+      <li>Maintain consistent interpretation of standards across reviewers, regardless of individual experience or availability</li>
+      <li>Treat silence as a signal of confidence, rather than a gap in coverage</li>
+    </ul>
+    <p>Just as importantly, the system stabilized standards enforcement without introducing new operational overhead:</p>
+    <ul>
+      <li>Publishing velocity was preserved because changes were not blocked</li>
+      <li>Reviewer effort was concentrated rather than expanded</li>
+      <li>The existing style guide remained authoritative without being reauthored or reinterpreted</li>
+    </ul>
+    <p>This shifted standards enforcement from a subjective, taste-driven activity to a <strong>repeatable, contract-driven process</strong> that can be applied continuously as content evolves and contributors change.</p>
+    <p>The result is not more feedback, but <strong>better judgment</strong>—with reviewers spending their time where it has the greatest impact, and customers encountering documentation that consistently reflects a user-centric perspective.</p>
     
     <h3>Tags</h3>
     <ul class="tags">
@@ -105,8 +202,7 @@
 </section>
 
 
-    <span style="color: #999999; font-size: 60%;">Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </span>
-    
+  
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
